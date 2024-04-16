@@ -1,0 +1,67 @@
+[1/5] cd /home/moritz/coding/ils3000-arduino/build/esp-idf/esptool_py && /home/moritz/.espressif/python_env/idf5.2_py3.10_env/bin/python /home/moritz/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/moritz/coding/ils3000-arduino/build/partition_table/partition-table.bin /home/moritz/coding/ils3000-arduino/build/ils3000-arduino.bin
+ils3000-arduino.bin binary size 0xd1f20 bytes. Smallest app partition is 0x100000 bytes. 0x2e0e0 bytes (18%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/moritz/coding/ils3000-arduino/build/bootloader/esp-idf/esptool_py && /home/moritz/.espressif/python_env/idf5.2_py3.10_env/bin/python /home/moritz/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/moritz/coding/ils3000-arduino/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/3] cd /home/moritz/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/moritz/esp/esp-idf -D "SERIAL_TOOL=/home/moritz/.espressif/python_env/idf5.2_py3.10_env/bin/python;;/home/moritz/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/moritz/coding/ils3000-arduino/build -P /home/moritz/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 ils3000-arduino.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: b4:e6:2d:fa:bd:0d
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000e1fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26704 bytes to 16347...
+Writing at 0x00001000... (100 %)
+Wrote 26704 bytes (16347 compressed) at 0x00001000 in 0.7 seconds (effective 289.8 kbit/s)...
+Hash of data verified.
+Compressed 859936 bytes to 490515...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001f8e3... (6 %)
+Writing at 0x0002cf75... (10 %)
+Writing at 0x0003ad40... (13 %)
+Writing at 0x00040bb5... (16 %)
+Writing at 0x00046900... (20 %)
+Writing at 0x0004c65a... (23 %)
+Writing at 0x00052251... (26 %)
+Writing at 0x00058015... (30 %)
+Writing at 0x0005df6b... (33 %)
+Writing at 0x00063b1c... (36 %)
+Writing at 0x0006aa99... (40 %)
+Writing at 0x00070a54... (43 %)
+Writing at 0x00076fd8... (46 %)
+Writing at 0x0007d2ad... (50 %)
+Writing at 0x0008342f... (53 %)
+Writing at 0x0008919d... (56 %)
+Writing at 0x0008f43b... (60 %)
+Writing at 0x0009548f... (63 %)
+Writing at 0x0009af55... (66 %)
+Writing at 0x000a0a28... (70 %)
+Writing at 0x000a69d3... (73 %)
+Writing at 0x000ac634... (76 %)
+Writing at 0x000b28f0... (80 %)
+Writing at 0x000b8c99... (83 %)
+Writing at 0x000c3576... (86 %)
+Writing at 0x000ca6da... (90 %)
+Writing at 0x000d0716... (93 %)
+Writing at 0x000d5bec... (96 %)
+Writing at 0x000dbd12... (100 %)
+Wrote 859936 bytes (490515 compressed) at 0x00010000 in 11.3 seconds (effective 610.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 446.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

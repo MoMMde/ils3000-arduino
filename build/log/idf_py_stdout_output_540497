@@ -1,0 +1,122 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/moritz/coding/ils3000-arduino/build/bootloader/esp-idf/esptool_py && /home/moritz/.espressif/python_env/idf5.2_py3.10_env/bin/python /home/moritz/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/moritz/coding/ils3000-arduino/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ils3000_main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/ils3000_main.c.obj 
+/home/moritz/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.2\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/moritz/coding/ils3000-arduino/build/config -I/home/moritz/esp/esp-idf/components/newlib/platform_include -I/home/moritz/esp/esp-idf/components/freertos/config/include -I/home/moritz/esp/esp-idf/components/freertos/config/include/freertos -I/home/moritz/esp/esp-idf/components/freertos/config/xtensa/include -I/home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/moritz/esp/esp-idf/components/freertos/esp_additions/include -I/home/moritz/esp/esp-idf/components/esp_hw_support/include -I/home/moritz/esp/esp-idf/components/esp_hw_support/include/soc -I/home/moritz/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/home/moritz/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/home/moritz/esp/esp-idf/components/heap/include -I/home/moritz/esp/esp-idf/components/log/include -I/home/moritz/esp/esp-idf/components/soc/include -I/home/moritz/esp/esp-idf/components/soc/esp32 -I/home/moritz/esp/esp-idf/components/soc/esp32/include -I/home/moritz/esp/esp-idf/components/hal/platform_port/include -I/home/moritz/esp/esp-idf/components/hal/esp32/include -I/home/moritz/esp/esp-idf/components/hal/include -I/home/moritz/esp/esp-idf/components/esp_rom/include -I/home/moritz/esp/esp-idf/components/esp_rom/include/esp32 -I/home/moritz/esp/esp-idf/components/esp_rom/esp32 -I/home/moritz/esp/esp-idf/components/esp_common/include -I/home/moritz/esp/esp-idf/components/esp_system/include -I/home/moritz/esp/esp-idf/components/esp_system/port/soc -I/home/moritz/esp/esp-idf/components/esp_system/port/include/private -I/home/moritz/esp/esp-idf/components/xtensa/esp32/include -I/home/moritz/esp/esp-idf/components/xtensa/include -I/home/moritz/esp/esp-idf/components/xtensa/deprecated_include -I/home/moritz/esp/esp-idf/components/lwip/include -I/home/moritz/esp/esp-idf/components/lwip/include/apps -I/home/moritz/esp/esp-idf/components/lwip/include/apps/sntp -I/home/moritz/esp/esp-idf/components/lwip/lwip/src/include -I/home/moritz/esp/esp-idf/components/lwip/port/include -I/home/moritz/esp/esp-idf/components/lwip/port/freertos/include -I/home/moritz/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/moritz/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/moritz/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/moritz/esp/esp-idf/components/bt/include/esp32/include -I/home/moritz/esp/esp-idf/components/bt/common/osi/include -I/home/moritz/esp/esp-idf/components/bt/common/api/include/api -I/home/moritz/esp/esp-idf/components/bt/common/btc/profile/esp/blufi/include -I/home/moritz/esp/esp-idf/components/bt/common/btc/profile/esp/include -I/home/moritz/esp/esp-idf/components/bt/host/bluedroid/api/include/api -I/home/moritz/esp/esp-idf/components/bt/porting/ext/tinycrypt/include -I/home/moritz/esp/esp-idf/components/esp_timer/include -I/home/moritz/esp/esp-idf/components/esp_wifi/include -I/home/moritz/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/home/moritz/esp/esp-idf/components/esp_event/include -I/home/moritz/esp/esp-idf/components/esp_phy/include -I/home/moritz/esp/esp-idf/components/esp_phy/esp32/include -I/home/moritz/esp/esp-idf/components/esp_netif/include -I/home/moritz/esp/esp-idf/components/nvs_flash/include -I/home/moritz/esp/esp-idf/components/spi_flash/include -I/home/moritz/esp/esp-idf/components/esp_partition/include -mlongcalls -Wno-frame-address  -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/moritz/coding/ils3000-arduino=. -fmacro-prefix-map=/home/moritz/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/ils3000_main.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/ils3000_main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/ils3000_main.c.obj -c /home/moritz/coding/ils3000-arduino/main/ils3000_main.c
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:34:66: warning: unsigned conversion from 'int' to 'unsigned char' changes value from '1208819692' to '236' [-Woverflow]
+   34 | static uint8_t gatt_charge_config_uuid_char[ESP_UUID_LEN_128] = {0x480d1fec, 0x00, 0x00, 0x4c3aac727ba0bc54c6c4};
+      |                                                                  ^~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:34:90: warning: integer constant is too large for its type
+   34 | static uint8_t gatt_charge_config_uuid_char[ESP_UUID_LEN_128] = {0x480d1fec, 0x00, 0x00, 0x4c3aac727ba0bc54c6c4};
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:34:90: warning: conversion from 'long long unsigned int' to 'unsigned char' changes value from '12426130252153276100' to '196' [-Woverflow]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:74:34: error: array type has incomplete element type 'struct gatts_profile_inst'
+   74 | static struct gatts_profile_inst gl_profile_tab[1] = {
+      |                                  ^~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:76:29: error: 'ble_gatt_callback_charge_config_service' undeclared here (not in a function)
+   76 |                 .gatts_cb = ble_gatt_callback_charge_config_service,
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c: In function 'ble_gatt_callback_charge_config_service':
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:136:14: error: 'ESP_GATSS_REG_EVT' undeclared (first use in this function); did you mean 'ESP_GATTS_REG_EVT'?
+  136 |         case ESP_GATSS_REG_EVT:
+      |              ^~~~~~~~~~~~~~~~~
+      |              ESP_GATTS_REG_EVT
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:136:14: note: each undeclared identifier is reported only once for each function it appears in
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:137:107: error: 'GATTS_NUM_HANDLE_TEST_A' undeclared (first use in this function)
+  137 |             esp_ble_gatts_create_service(gatts_if, &gl_profile_tab[PROFILE_CHARGE_CONFIG_APP].service_id, GATTS_NUM_HANDLE_TEST_A);
+      |                                                                                                           ^~~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_REG_EVT' not handled in switch [-Werror=switch]
+  135 |     switch (event) {
+      |     ^~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_READ_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_WRITE_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_EXEC_WRITE_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_MTU_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_CONF_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_UNREG_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_CREATE_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_ADD_INCL_SRVC_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_ADD_CHAR_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_ADD_CHAR_DESCR_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_DELETE_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_START_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_STOP_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_CONNECT_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_DISCONNECT_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_OPEN_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_CANCEL_OPEN_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_CLOSE_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_LISTEN_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_CONGEST_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_RESPONSE_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_CREAT_ATTR_TAB_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_SET_ATTR_VAL_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:135:5: error: enumeration value 'ESP_GATTS_SEND_SERVICE_CHANGE_EVT' not handled in switch [-Werror=switch]
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c: At top level:
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:143:13: error: redefinition of 'gatts_event_handler'
+  143 | static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:123:13: note: previous definition of 'gatts_event_handler' with type 'void(esp_gatts_cb_event_t,  esp_gatt_if_t,  esp_ble_gatts_cb_param_t *)' {aka 'void(esp_gatts_cb_event_t,  unsigned char,  esp_ble_gatts_cb_param_t *)'}
+  123 | static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param)
+      |             ^~~~~~~~~~~~~~~~~~~
+In file included from /home/moritz/coding/ils3000-arduino/main/ils3000_main.c:9:
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c: In function 'gatts_event_handler':
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:150:22: error: 'GATTS_TAG' undeclared (first use in this function)
+  150 |             ESP_LOGI(GATTS_TAG, "Reg app failed, app_id %04x, status %d",
+      |                      ^~~~~~~~~
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:436:81: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                 ^~~
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:150:13: note: in expansion of macro 'ESP_LOGI'
+  150 |             ESP_LOGI(GATTS_TAG, "Reg app failed, app_id %04x, status %d",
+      |             ^~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:161:29: error: 'PROFILE_NUM' undeclared (first use in this function)
+  161 |         for (idx = 0; idx < PROFILE_NUM; idx++) {
+      |                             ^~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c: In function 'setup_bluetooth':
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:214:5: error: too few arguments to function 'esp_ble_gatts_create_service'
+  214 |     esp_ble_gatts_create_service()
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/moritz/coding/ils3000-arduino/main/ils3000_main.c:19:
+/home/moritz/esp/esp-idf/components/bt/host/bluedroid/api/include/api/esp_gatts_api.h:338:11: note: declared here
+  338 | esp_err_t esp_ble_gatts_create_service(esp_gatt_if_t gatts_if,
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:214:35: error: expected ';' before 'esp_bluedroid_config_t'
+  214 |     esp_ble_gatts_create_service()
+      |                                   ^
+      |                                   ;
+......
+  217 |     esp_bluedroid_config_t bluedroid_config = BT_BLUEDROID_INIT_CONFIG_DEFAULT();
+      |     ~~~~~~~~~~~~~~~~~~~~~~         
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:219:40: error: 'bluedroid_config' undeclared (first use in this function); did you mean 'esp_bluedroid_config_t'?
+  219 |     ret = esp_bluedroid_init_with_cfg(&bluedroid_config);
+      |                                        ^~~~~~~~~~~~~~~~
+      |                                        esp_bluedroid_config_t
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:243:11: error: too few arguments to function 'esp_ble_gatts_app_register'
+  243 |     ret = esp_ble_gatts_app_register(); // todo ret
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/esp/esp-idf/components/bt/host/bluedroid/api/include/api/esp_gatts_api.h:306:11: note: declared here
+  306 | esp_err_t esp_ble_gatts_app_register(uint16_t app_id);
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c: At top level:
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:133:13: warning: 'ble_gatt_callback_charge_config_service' defined but not used [-Wunused-function]
+  133 | static void ble_gatt_callback_charge_config_service(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:123:13: warning: 'gatts_event_handler' defined but not used [-Wunused-function]
+  123 | static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param)
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:74:34: warning: 'gl_profile_tab' defined but not used [-Wunused-variable]
+   74 | static struct gatts_profile_inst gl_profile_tab[1] = {
+      |                                  ^~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:34:16: warning: 'gatt_charge_config_uuid_char' defined but not used [-Wunused-variable]
+   34 | static uint8_t gatt_charge_config_uuid_char[ESP_UUID_LEN_128] = {0x480d1fec, 0x00, 0x00, 0x4c3aac727ba0bc54c6c4};
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:33:16: warning: 'gatt_charge_config_uuid_service' defined but not used [-Wunused-variable]
+   33 | static uint8_t gatt_charge_config_uuid_service[ESP_UUID_LEN_128] = {0x48, 0x0d, 0x1f, 0xec, 0x00, 0x00, 0x4c, 0x3a, 0xac, 0x72, 0x7b, 0xa0, 0xbc, 0x54, 0xc6, 0xc4};
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

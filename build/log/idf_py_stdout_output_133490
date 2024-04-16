@@ -1,0 +1,102 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/moritz/coding/ils3000-arduino/build/bootloader/esp-idf/esptool_py && /home/moritz/.espressif/python_env/idf5.2_py3.10_env/bin/python /home/moritz/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/moritz/coding/ils3000-arduino/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ils3000_main.c.obj
+In file included from /home/moritz/coding/ils3000-arduino/main/ils3000_main.c:8:
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c: In function 'toggle_ventilator_relay':
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:140: warning: passing argument 1 of 'swap_high_low' makes pointer from integer without a cast [-Wint-conversion]
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |                                                                                                                                            ^~~~~~~~~~~~~~~~~~
+      |                                                                                                                                            |
+      |                                                                                                                                            int
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:436:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  436 |         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:5: note: in expansion of macro 'ESP_LOGI'
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |     ^~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:26:24: note: expected 'int *' but argument is of type 'int'
+   26 | int swap_high_low(int* state) {
+      |                   ~~~~~^~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:140: warning: passing argument 1 of 'swap_high_low' makes pointer from integer without a cast [-Wint-conversion]
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |                                                                                                                                            ^~~~~~~~~~~~~~~~~~
+      |                                                                                                                                            |
+      |                                                                                                                                            int
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:437:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  437 |         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:5: note: in expansion of macro 'ESP_LOGI'
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |     ^~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:26:24: note: expected 'int *' but argument is of type 'int'
+   26 | int swap_high_low(int* state) {
+      |                   ~~~~~^~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:140: warning: passing argument 1 of 'swap_high_low' makes pointer from integer without a cast [-Wint-conversion]
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |                                                                                                                                            ^~~~~~~~~~~~~~~~~~
+      |                                                                                                                                            |
+      |                                                                                                                                            int
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:438:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  438 |         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:5: note: in expansion of macro 'ESP_LOGI'
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |     ^~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:26:24: note: expected 'int *' but argument is of type 'int'
+   26 | int swap_high_low(int* state) {
+      |                   ~~~~~^~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:140: warning: passing argument 1 of 'swap_high_low' makes pointer from integer without a cast [-Wint-conversion]
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |                                                                                                                                            ^~~~~~~~~~~~~~~~~~
+      |                                                                                                                                            |
+      |                                                                                                                                            int
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:439:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  439 |         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:5: note: in expansion of macro 'ESP_LOGI'
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |     ^~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:26:24: note: expected 'int *' but argument is of type 'int'
+   26 | int swap_high_low(int* state) {
+      |                   ~~~~~^~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:140: warning: passing argument 1 of 'swap_high_low' makes pointer from integer without a cast [-Wint-conversion]
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |                                                                                                                                            ^~~~~~~~~~~~~~~~~~
+      |                                                                                                                                            |
+      |                                                                                                                                            int
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:440:137: note: in definition of macro 'ESP_LOG_LEVEL'
+  440 |         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+      |                                                                                                                                         ^~~~~~~~~~~
+/home/moritz/esp/esp-idf/components/log/include/esp_log.h:368:38: note: in expansion of macro 'ESP_LOG_LEVEL_LOCAL'
+  368 | #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+      |                                      ^~~~~~~~~~~~~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:48:5: note: in expansion of macro 'ESP_LOGI'
+   48 |     ESP_LOGI(LOG_TAG, "Will toggle ventilator relay. (%s -> %s)", stringify_high_low(charge_relay_state), stringify_high_low(swap_high_low(charge_relay_state)));
+      |     ^~~~~~~~
+/home/moritz/coding/ils3000-arduino/main/ils3000_main.c:26:24: note: expected 'int *' but argument is of type 'int'
+   26 | int swap_high_low(int* state) {
+      |                   ~~~~~^~~~~
+[3/7] Linking C static library esp-idf/main/libmain.a
+[4/7] Generating ld/sections.ld
+[5/7] Linking CXX executable ils3000-arduino.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/moritz/coding/ils3000-arduino/build/ils3000-arduino.bin
+[7/7] cd /home/moritz/coding/ils3000-arduino/build/esp-idf/esptool_py && /home/moritz/.espressif/python_env/idf5.2_py3.10_env/bin/python /home/moritz/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/moritz/coding/ils3000-arduino/build/partition_table/partition-table.bin /home/moritz/coding/ils3000-arduino/build/ils3000-arduino.bin
+ils3000-arduino.bin binary size 0x2b4d0 bytes. Smallest app partition is 0x100000 bytes. 0xd4b30 bytes (83%) free.

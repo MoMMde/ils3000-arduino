@@ -1,0 +1,74 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Apr  8 2024 18:18:03[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.0[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (42) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (46) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (51) boot: Enabling RNG early entropy source...[0m
+[0;32mI (56) boot: Partition Table:[0m
+[0;32mI (60) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (74) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (94) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=25each (155308) map[0m
+[0;32mI (155) esp_image: segment 1: paddr=00035ed4 vaddr=3ffbdb60 size=04a54h ( 19028) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0003a930 vaddr=40080000 size=056e8h ( 22248) load[0m
+[0;32mI (171) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=8d148h (577864) map[0m
+[0;32mI (370) esp_image: segment 4: paddr=000cd170 vaddr=400856e8 size=139cch ( 80332) load[0m
+[0;32mI (414) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (414) boot: Disabling RNG early entropy source...[0m
+[0;32mI (426) cpu_start: Multicore app[0m
+[0;32mI (434) cpu_start: Pro cpu start user code[0m
+[0;32mI (435) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (435) cpu_start: Application information:[0m
+[0;32mI (438) cpu_start: Project name:     ils3000-arduino[0m
+[0;32mI (443) cpu_start: App version:      7108813-dirty[0m
+[0;32mI (449) cpu_start: Compile time:     Apr  8 2024 18:18:01[0m
+[0;32mI (455) cpu_start: ELF file SHA256:  c6904a347...[0m
+[0;32mI (460) cpu_start: ESP-IDF:          v5.2[0m
+[0;32mI (465) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (470) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (474) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (479) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (486) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (492) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (498) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (505) heap_init: At 3FFC3F90 len 0001C070 (112 KiB): DRAM[0m
+[0;32mI (511) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (517) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (524) heap_init: At 400990B4 len 00006F4C (27 KiB): IRAM[0m
+[0;32mI (531) spi_flash: detected chip: generic[0m
+[0;32mI (534) spi_flash: flash io: dio[0m
+[0;33mW (538) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (552) coexist: coex firmware version: 77cd7f8[0m
+[0;32mI (557) main_task: Started on CPU0[0m
+[0;32mI (567) main_task: Calling app_main()[0m
+[0;32mI (567) ils3000-arduino.main: **** ILS3000 ARDUINO CONTROLLER (0.1-beta)****[0m
+[0;32mI (567) ils3000-arduino.main: Following GPIO ports will be used:[0m
+[0;32mI (577) ils3000-arduino.main: GPIO_PORT_CHARGE_RELAY: 5[0m
+[0;32mI (577) ils3000-arduino.main: GPIO_PORT_VENTILATOR_RELAY: 6[0m
+[0;32mI (587) ils3000-arduino.main: GPIO_PORT_THERMOSTAT: 7[0m
+[0;32mI (637) BTDM_INIT: BT controller compile version [a38dc5c][0m
+[0;32mI (637) BTDM_INIT: Bluetooth MAC: b4:e6:2d:fa:bd:0f[0m
+[0;32mI (637) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+[0;32mI (1087) ils3000-arduino.main: reg.app_id=0[0m
+[0;32mI (1087) ils3000-arduino.main: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1087) ils3000-arduino.main: CREATE_SERVICE_EVT, status 0, service_handle 40[0m
+[0;32mI (1097) ils3000-arduino.main: Received Event 12[0m
+[0;32mI (1107) ils3000-arduino.main: Received Event 9[0m
+[0;32mI (1107) main_task: Returned from app_main()[0m
+[0;32mI (1127) ils3000-arduino.main: Successfully started advertising[0m
+[0;32mI (1137) ils3000-arduino.main: Successfully started advertising[0m
