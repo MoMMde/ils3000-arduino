@@ -1,0 +1,379 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Apr  8 2024 18:18:03[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (33) boot: chip revision: v1.0[0m
+[0;32mI (37) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (41) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (46) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (50) boot: Enabling RNG early entropy source...[0m
+[0;32mI (56) boot: Partition Table:[0m
+[0;32mI (59) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (67) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (74) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (82) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2632ch (156460) map[0m
+[0;32mI (155) esp_image: segment 1: paddr=00036354 vaddr=3ffbdb60 size=04ab4h ( 19124) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0003ae10 vaddr=40080000 size=05208h ( 21000) load[0m
+[0;32mI (171) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=8e094h (581780) map[0m
+[0;32mI (371) esp_image: segment 4: paddr=000ce0bc vaddr=40085208 size=13each ( 81580) load[0m
+[0;32mI (416) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (416) boot: Disabling RNG early entropy source...[0m
+[0;32mI (427) cpu_start: Multicore app[0m
+[0;32mI (436) cpu_start: Pro cpu start user code[0m
+[0;32mI (436) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (436) cpu_start: Application information:[0m
+[0;32mI (439) cpu_start: Project name:     ils3000-arduino[0m
+[0;32mI (445) cpu_start: App version:      87e8df7-dirty[0m
+[0;32mI (450) cpu_start: Compile time:     Apr 16 2024 18:52:48[0m
+[0;32mI (456) cpu_start: ELF file SHA256:  306f0bf49...[0m
+[0;32mI (462) cpu_start: ESP-IDF:          v5.2[0m
+[0;32mI (466) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (471) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (476) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (481) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (488) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (506) heap_init: At 3FFC4000 len 0001C000 (112 KiB): DRAM[0m
+[0;32mI (512) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (519) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (525) heap_init: At 400990B4 len 00006F4C (27 KiB): IRAM[0m
+[0;32mI (533) spi_flash: detected chip: generic[0m
+[0;32mI (536) spi_flash: flash io: dio[0m
+[0;33mW (540) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (554) coexist: coex firmware version: 77cd7f8[0m
+[0;32mI (559) main_task: Started on CPU0[0m
+[0;32mI (569) main_task: Calling app_main()[0m
+[0;32mI (609) BTDM_INIT: BT controller compile version [a38dc5c][0m
+[0;32mI (609) BTDM_INIT: Bluetooth MAC: b4:e6:2d:fa:bd:0f[0m
+[0;32mI (609) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+[0;32mI (1059) GATTS_DEMO: ----> gatts_event_handler 0[0m
+[0;32mI (1059) GATTS_DEMO: REGISTER_APP_EVT, status 0, app_id 0[0m
+[0;32mI (1059) main_task: Returned from app_main()[0m
+[0;32mI (1069) GATTS_DEMO: ----> gatts_event_handler 7[0m
+[0;32mI (1069) GATTS_DEMO: CREATE_SERVICE_EVT, status 0,  service_handle 40[0m
+[0;32mI (1089) GATTS_DEMO: ----> gatts_event_handler 12[0m
+[0;32mI (1089) GATTS_DEMO: SERVICE_START_EVT, status 0, service_handle 40[0m
+[0;32mI (1089) GATTS_DEMO: ----> gatts_event_handler 9[0m
+[0;32mI (1099) GATTS_DEMO: ADD_CHAR_EVT, status 0,  attr_handle 42, service_handle 40[0m
+[0;32mI (1109) GATTS_DEMO: the gatts demo char length = 3[0m
+[0;32mI (1109) GATTS_DEMO: prf_char[0] =11[0m
+[0;32mI (1119) GATTS_DEMO: prf_char[1] =22[0m
+[0;32mI (1119) GATTS_DEMO: prf_char[2] =33[0m
+[0;32mI (1129) GATTS_DEMO: ----> gatts_event_handler 10[0m
+[0;32mI (1129) GATTS_DEMO: ADD_DESCR_EVT, status 0, attr_handle 43, service_handle 40[0m
+[0;32mI (8659) GATTS_DEMO: ----> gatts_event_handler 14[0m
+[0;32mI (8659) GATTS_DEMO: ESP_GATTS_CONNECT_EVT, conn_id 0, remote 6d:c8:f9:5c:f0:40:[0m
+[0;33mW (8659) BT_L2CAP: l2cble_start_conn_update, the last connection update command still pending.[0m
+[0;32mI (9139) GATTS_DEMO: update connection params status = 0, min_int = 0, max_int = 0,conn_int = 6,latency = 0, timeout = 500[0m
+[0;32mI (9389) GATTS_DEMO: update connection params status = 0, min_int = 16, max_int = 32,conn_int = 24,latency = 0, timeout = 400[0m
+[0;32mI (9519) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (9519) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 1, handle 42[0m
+[0;32mI (9519) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (9519) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (9529) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (10599) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (10599) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 2, handle 42[0m
+[0;32mI (10599) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (10599) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (10609) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (11559) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (11559) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 3, handle 42[0m
+[0;32mI (11559) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (11559) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (11569) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (12579) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (12579) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 4, handle 42[0m
+[0;32mI (12579) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (12579) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (12589) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (13599) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (13599) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 5, handle 42[0m
+[0;32mI (13599) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (13599) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (13609) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (14589) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (14589) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 6, handle 42[0m
+[0;32mI (14589) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (14589) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (14599) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (15609) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (15609) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 7, handle 42[0m
+[0;32mI (15609) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (15609) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (15619) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (16599) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (16599) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 8, handle 42[0m
+[0;32mI (16599) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (16599) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (16609) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (17679) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (17679) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 9, handle 42[0m
+[0;32mI (17679) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (17679) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (17689) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (18279) GATTS_DEMO: ----> gatts_event_handler 2[0m
+[0;32mI (18279) GATTS_DEMO: GATT_WRITE_EVT, conn_id 0, trans_id 10, handle 42[0m
+[0;32mI (18279) GATTS_DEMO: GATT_WRITE_EVT, value len 3, value :[0m
+[0;32mI (18289) GATTS_DEMO: current_carge=53; max_charge=65; min_charge=32[0m
+[0;32mI (18299) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (18299) GATTS_DEMO: ----> gatts_event_handler 5[0m
+[0;32mI (18299) GATTS_DEMO: ESP_GATTS_CONF_EVT, status 0 attr_handle 42[0m
+[0;32mI (18639) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (18639) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 11, handle 42[0m
+[0;32mI (18639) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (18639) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (18649) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (19659) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (19659) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 12, handle 42[0m
+[0;32mI (19659) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (19659) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (19669) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (20529) GATTS_DEMO: ----> gatts_event_handler 2[0m
+[0;32mI (20529) GATTS_DEMO: GATT_WRITE_EVT, conn_id 0, trans_id 13, handle 42[0m
+[0;32mI (20529) GATTS_DEMO: GATT_WRITE_EVT, value len 3, value :[0m
+[0;32mI (20529) GATTS_DEMO: Changing Charging Status[0m
+[0;32mI (20539) GATTS_DEMO: current_carge=7; max_charge=65; min_charge=32[0m
+[0;32mI (20549) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (20549) GATTS_DEMO: ----> gatts_event_handler 5[0m
+[0;32mI (20559) GATTS_DEMO: ESP_GATTS_CONF_EVT, status 0 attr_handle 42[0m
+[0;32mI (20679) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (20679) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 14, handle 42[0m
+[0;32mI (20679) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (20679) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (20689) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (21699) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (21699) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 15, handle 42[0m
+[0;32mI (21699) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (21699) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (21709) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (22539) GATTS_DEMO: ----> gatts_event_handler 2[0m
+[0;32mI (22539) GATTS_DEMO: GATT_WRITE_EVT, conn_id 0, trans_id 16, handle 42[0m
+[0;32mI (22539) GATTS_DEMO: GATT_WRITE_EVT, value len 3, value :[0m
+[0;32mI (22539) GATTS_DEMO: Changing Charging Status[0m
+[0;32mI (22549) GATTS_DEMO: current_carge=84; max_charge=65; min_charge=32[0m
+[0;32mI (22559) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (22559) GATTS_DEMO: ----> gatts_event_handler 5[0m
+[0;32mI (22569) GATTS_DEMO: ESP_GATTS_CONF_EVT, status 0 attr_handle 42[0m
+[0;32mI (22719) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (22719) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 17, handle 42[0m
+[0;32mI (22719) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (22719) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (22729) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (23769) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (23769) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 18, handle 42[0m
+[0;32mI (23769) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (23769) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (23779) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (24729) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (24729) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 19, handle 42[0m
+[0;32mI (24729) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (24729) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (24739) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (25749) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (25749) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 20, handle 42[0m
+[0;32mI (25749) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (25749) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (25759) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (26739) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (26739) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 21, handle 42[0m
+[0;32mI (26739) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (26739) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (26749) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (27759) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (27759) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 22, handle 42[0m
+[0;32mI (27759) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (27759) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (27769) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (28779) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (28779) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 23, handle 42[0m
+[0;32mI (28779) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (28779) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (28789) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (29829) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (29829) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 24, handle 42[0m
+[0;32mI (29829) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (29829) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (29839) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (30819) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (30819) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 25, handle 42[0m
+[0;32mI (30819) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (30819) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (30829) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (31839) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (31839) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 26, handle 42[0m
+[0;32mI (31839) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (31839) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (31849) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (32859) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (32859) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 27, handle 42[0m
+[0;32mI (32859) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (32859) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (32869) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (33939) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (33939) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 28, handle 42[0m
+[0;32mI (33939) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (33939) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (33949) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (34899) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (34899) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 29, handle 42[0m
+[0;32mI (34899) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (34899) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (34909) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (35919) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (35919) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 30, handle 42[0m
+[0;32mI (35919) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (35919) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (35929) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (36909) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (36909) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 31, handle 42[0m
+[0;32mI (36909) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (36909) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (36919) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (37959) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (37959) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 32, handle 42[0m
+[0;32mI (37959) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (37959) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (37969) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (38949) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (38949) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 33, handle 42[0m
+[0;32mI (38949) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (38949) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (38959) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (39969) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (39969) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 34, handle 42[0m
+[0;32mI (39969) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (39969) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (39979) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (40989) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (40989) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 35, handle 42[0m
+[0;32mI (40989) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (40989) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (40999) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (42009) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (42009) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 36, handle 42[0m
+[0;32mI (42009) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (42009) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (42019) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (43029) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (43029) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 37, handle 42[0m
+[0;32mI (43029) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (43029) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (43039) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (44109) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (44109) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 38, handle 42[0m
+[0;32mI (44109) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (44109) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (44119) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (45039) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (45039) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 39, handle 42[0m
+[0;32mI (45039) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (45039) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (45049) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (46089) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (46089) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 40, handle 42[0m
+[0;32mI (46089) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (46089) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (46099) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (47139) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (47139) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 41, handle 42[0m
+[0;32mI (47139) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (47139) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (47149) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (48099) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (48099) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 42, handle 42[0m
+[0;32mI (48099) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (48099) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (48109) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (49119) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (49119) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 43, handle 42[0m
+[0;32mI (49119) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (49119) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (49129) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (50169) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (50169) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 44, handle 42[0m
+[0;32mI (50169) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (50169) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (50179) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (51159) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (51159) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 45, handle 42[0m
+[0;32mI (51159) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (51159) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (51169) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (52179) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (52179) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 46, handle 42[0m
+[0;32mI (52179) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (52179) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (52189) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (53199) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (53199) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 47, handle 42[0m
+[0;32mI (53199) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (53199) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (53209) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (54249) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (54249) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 48, handle 42[0m
+[0;32mI (54249) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (54249) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (54259) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (55239) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (55239) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 49, handle 42[0m
+[0;32mI (55239) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (55239) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (55249) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (56259) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (56259) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 50, handle 42[0m
+[0;32mI (56259) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (56259) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (56269) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (57279) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (57279) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 51, handle 42[0m
+[0;32mI (57279) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (57279) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (57289) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (58329) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (58329) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 52, handle 42[0m
+[0;32mI (58329) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (58329) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (58339) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (59319) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (59319) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 53, handle 42[0m
+[0;32mI (59319) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (59319) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (59329) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (60339) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (60339) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 54, handle 42[0m
+[0;32mI (60339) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (60339) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (60349) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (61359) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (61359) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 55, handle 42[0m
+[0;32mI (61359) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (61359) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (61369) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (62439) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (62439) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 56, handle 42[0m
+[0;32mI (62439) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (62449) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (62449) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (63399) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (63399) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 57, handle 42[0m
+[0;32mI (63399) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (63409) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (63409) GATTS_DEMO: ----> gatts_event_handler 21[0m
+[0;32mI (64419) GATTS_DEMO: ----> gatts_event_handler 1[0m
+[0;32mI (64419) GATTS_DEMO: GATT_READ_EVT, conn_id 0, trans_id 58, handle 42[0m
+[0;32mI (64419) GATTS_DEMO: measure_temperature()[0m
+[0;32mI (64429) GATTS_DEMO: Changing Cooling Status[0m
+[0;32mI (64429) GATTS_DEMO: ----> gatts_event_handler 21[0m

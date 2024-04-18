@@ -26,6 +26,8 @@
 #include "nvs_flash.h"
 #include "esp_bt.h"
 
+#include "driver/gpio.h"
+
 #include "esp_gap_ble_api.h"
 #include "esp_gatts_api.h"
 #include "esp_bt_defs.h"
@@ -145,6 +147,10 @@ static esp_ble_adv_params_t adv_params = {
 #define PROFILE_A_APP_ID 0
 #define PROFILE_B_APP_ID 1
 
+#define TEMP_SENSOR_PORT 0
+#define CHARGING_PORT 32
+#define FAN_PORT 22
+
 struct gatts_profile_inst {
     esp_gatts_cb_t gatts_cb;
     uint16_t gatts_if;
@@ -182,21 +188,30 @@ static prepare_type_env_t b_prepare_write_env;
 bool is_charging = false;
 bool is_cooling = false;
 
+int min_charge = 75;
+int max_charge = 80;
+int current_charge = 0;
+int current_temp = 0;
+
 static void change_charging_status(bool should_charge) {
-    if (is_charging == should_charge) {
-        return;
-    } else {
-        is_charging = should_charge;
-        // todo: gpio
-    }}
+    gpio_set_level(CHARGING_PORT, should_charge);
+    is_charging = should_charge;
+}
 
 static void change_fan_status(bool should_spin) {
-    if (is_cooling == should_spin) {
-        return;
-    } else {
-        is_cooling = should_spin;
-        // todo: gpio
-    }
+    gpio_set_level(FAN_PORT, should_spin);
+    is_cooling = should_spin;
+}
+
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+void measure_temperature()
+{
+    ESP_LOGI(GATTS_TAG, "measure_temperature()");
+    int temp_sensor_port = gpio_get_level(TEMP_SENSOR_PORT);
+    current_temp = map(temp_sensor_port, 0, 410, -50, 150);
 }
 
 static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param)
@@ -256,10 +271,6 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
     }
 }
 
-int min_charge = 75;
-int max_charge = 80;
-int current_charge = 0;
-
 static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param) {
     switch (event) {
         case ESP_GATTS_REG_EVT:
@@ -303,13 +314,25 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
             break;
         case ESP_GATTS_READ_EVT: {
             ESP_LOGI(GATTS_TAG, "GATT_READ_EVT, conn_id %d, trans_id %" PRIu32 ", handle %d", param->read.conn_id, param->read.trans_id, param->read.handle);
+
+            measure_temperature();
+            ESP_LOGI(GATTS_TAG, "is_cooling=%b", is_cooling);
+            if (current_temp > 25 && is_cooling == false) {
+                change_fan_status(true);
+            } else {
+                change_fan_status(false);
+            }
+
             esp_gatt_rsp_t rsp;
             memset(&rsp, 0, sizeof(esp_gatt_rsp_t));
             rsp.attr_value.handle = param->read.handle;
-            rsp.attr_value.len = 3;
+            rsp.attr_value.len = 6;
             rsp.attr_value.value[0] = current_charge;
             rsp.attr_value.value[1] = max_charge;
             rsp.attr_value.value[2] = min_charge;
+            rsp.attr_value.value[3] = is_charging;
+            rsp.attr_value.value[4] = is_cooling;
+            rsp.attr_value.value[5] = current_temp;
             esp_ble_gatts_send_response(gatts_if, param->read.conn_id, param->read.trans_id,
                                         ESP_GATT_OK, &rsp);
             break;
@@ -321,16 +344,44 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
                 current_charge = param->write.value[0];
                 max_charge = param->write.value[1];
                 min_charge = param->write.value[2];
+
+                if (current_charge >= max_charge) {
+                    change_charging_status(false);
+                };
+
+                if (current_charge <= min_charge) {
+                    change_charging_status(true);
+                };
+
                 ESP_LOGI(GATTS_TAG, "current_carge=%d; max_charge=%d; min_charge=%d", current_charge, max_charge, min_charge);
+
+                uint8_t indicate_data[3];
+                for (int i = 0; i < sizeof(indicate_data); ++i)
+                {
+                    indicate_data[i] = i%0xff;
+                }
+
+                esp_ble_gatts_send_indicate(gatts_if, param->write.conn_id, gl_profile_tab[PROFILE_A_APP_ID].char_handle,
+                                            sizeof(indicate_data), indicate_data, false);
+
+                esp_gatt_rsp_t *gatt_rsp = (esp_gatt_rsp_t *)malloc(sizeof(esp_gatt_rsp_t));
+                if (gatt_rsp) {
+                    gatt_rsp->attr_value.len = param->write.len;
+                    gatt_rsp->attr_value.handle = param->write.handle;
+                    gatt_rsp->attr_value.offset = param->write.offset;
+                    gatt_rsp->attr_value.auth_req = ESP_GATT_AUTH_REQ_NONE;
+                    memcpy(gatt_rsp->attr_value.value, param->write.value, param->write.len);
+                    esp_err_t response_err = esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, gatt_rsp);
+                    if (response_err != ESP_OK){
+                        ESP_LOGE(GATTS_TAG, "Send response error\n");
+                    }
+                    free(gatt_rsp);
+                } else {
+                    ESP_LOGE(GATTS_TAG, "malloc failed, no resource to send response error\n");
+                }
             }
-            example_write_event_env(gatts_if, &a_prepare_write_env, param);
             break;
         }
-        case ESP_GATTS_EXEC_WRITE_EVT:
-            ESP_LOGI(GATTS_TAG,"ESP_GATTS_EXEC_WRITE_EVT");
-            esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, NULL);
-            example_exec_write_event_env(&a_prepare_write_env, param);
-            break;
         case ESP_GATTS_MTU_EVT:
             ESP_LOGI(GATTS_TAG, "ESP_GATTS_MTU_EVT, MTU %d", param->mtu.mtu);
             break;
@@ -352,6 +403,9 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
                 ESP_LOGE(GATTS_TAG, "add char failed, error code =%x",add_char_ret);
             }
             break;
+        case ESP_GATTS_EXEC_WRITE_EVT:
+            esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, NULL);
+            break;
         case ESP_GATTS_ADD_INCL_SRVC_EVT:
             break;
         case ESP_GATTS_ADD_CHAR_EVT: {
@@ -364,14 +418,11 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
             gl_profile_tab[PROFILE_A_APP_ID].descr_uuid.len = ESP_UUID_LEN_16;
             gl_profile_tab[PROFILE_A_APP_ID].descr_uuid.uuid.uuid16 = ESP_GATT_UUID_CHAR_CLIENT_CONFIG;
             esp_err_t get_attr_ret = esp_ble_gatts_get_attr_value(param->add_char.attr_handle,  &length, &prf_char);
-            if (get_attr_ret == ESP_FAIL){
+
+            if (get_attr_ret == ESP_FAIL) {
                 ESP_LOGE(GATTS_TAG, "ILLEGAL HANDLE");
             }
 
-            ESP_LOGI(GATTS_TAG, "the gatts demo char length = %x", length);
-            for(int i = 0; i < length; i++){
-                ESP_LOGI(GATTS_TAG, "prf_char[%x] =%x",i,prf_char[i]);
-            }
             esp_err_t add_descr_ret = esp_ble_gatts_add_char_descr(gl_profile_tab[PROFILE_A_APP_ID].service_handle, &gl_profile_tab[PROFILE_A_APP_ID].descr_uuid,
                                                                    ESP_GATT_PERM_READ | ESP_GATT_PERM_WRITE, NULL, NULL);
             if (add_descr_ret){
@@ -436,7 +487,6 @@ static void gatts_profile_b_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
 static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param)
 {
     /* If event is register event, store the gatts_if for each profile */
-    ESP_LOGI(GATTS_TAG, "----> gatts_event_handler %d", event);
     if (event == ESP_GATTS_REG_EVT) {
         if (param->reg.status == ESP_GATT_OK) {
             gl_profile_tab[param->reg.app_id].gatts_if = gatts_if;
@@ -525,6 +575,4 @@ void app_main(void)
     if (local_mtu_ret){
         ESP_LOGE(GATTS_TAG, "set local  MTU failed, error code = %x", local_mtu_ret);
     }
-
-    return;
 }

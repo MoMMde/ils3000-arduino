@@ -1,0 +1,286 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x4000bfed: _xtos_set_intlevel in ROM
+0x4008338d: hli_intr_restore at /home/moritz/esp/esp-idf/components/bt/controller/esp32/hli_api.c:108
+0x4008374a: interrupt_hlevel_restore at /home/moritz/esp/esp-idf/components/bt/controller/esp32/bt.c:518
+0x400900e6: r_global_int_restore at ??:?
+0x401302bf: r_rw_schedule at ??:?
+0x40130912: btdm_controller_task at ??:?
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x4000bfed: _xtos_set_intlevel in ROM
+0x40092413: vPortClearInterruptMaskFromISR at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:564
+ (inlined by) vPortExitCritical at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:504
+0x40085853: phy_exit_critical at /home/moritz/esp/esp-idf/components/esp_phy/src/phy_init.c:177
+0x4015d5f9: phy_wakeup_init at /home/cff/gittree/chip7.1_phy/chip_7.1/board_code/app_test/pp/phy/phy_chip_v7.c:3734
+0x40126b0c: esp_phy_enable at /home/moritz/esp/esp-idf/components/esp_phy/src/phy_init.c:259
+0x400d7e70: btdm_sleep_exit_phase3_wrapper at /home/moritz/esp/esp-idf/components/bt/controller/esp32/bt.c:966
+0x401308b2: btdm_controller_task at ??:?
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x4000bfed: _xtos_set_intlevel in ROM
+0x400939c2: vPortClearInterruptMaskFromISR at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:564
+ (inlined by) xTaskGetSchedulerState at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4948
+0x400919dd: xQueueGenericSend at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:941
+0x40082b01: lock_release_generic at /home/moritz/esp/esp-idf/components/newlib/locks.c:192
+0x40082bb1: _lock_release at /home/moritz/esp/esp-idf/components/newlib/locks.c:198
+0x401268a9: esp_phy_disable at /home/moritz/esp/esp-idf/components/esp_phy/src/phy_init.c:318
+0x400d7e9b: btdm_sleep_enter_phase2_wrapper at /home/moritz/esp/esp-idf/components/bt/controller/esp32/bt.c:942
+0x4013030e: r_rw_schedule at ??:?
+0x40130912: btdm_controller_task at ??:?
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x4000bfed: _xtos_set_intlevel in ROM
+0x40092413: vPortClearInterruptMaskFromISR at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:564
+ (inlined by) vPortExitCritical at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:504
+0x40091e4e: xQueueReceive at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1632
+0x400d7ef5: queue_recv_hlevel_wrapper at /home/moritz/esp/esp-idf/components/bt/controller/esp32/bt.c:774
+0x401303c6: btdm_controller_task at ??:?
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x4012271f: task_wdt_timeout_handling at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:441
+0x40122b3c: task_wdt_isr at /home/moritz/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:515
+0x40083b0d: _xt_lowint1 at /home/moritz/esp/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d7b7d: app_main at /home/moritz/coding/ils3000-arduino/main/ils3000_demo.c:535 (discriminator 1)
+0x4015bda7: main_task at /home/moritz/esp/esp-idf/components/freertos/app_startup.c:208
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0m

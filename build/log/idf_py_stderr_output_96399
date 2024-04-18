@@ -1,0 +1,36 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x400967c0: remove_free_block at /home/moritz/esp/esp-idf/components/heap/tlsf/tlsf.c:333
+ (inlined by) block_locate_free at /home/moritz/esp/esp-idf/components/heap/tlsf/tlsf.c:567
+ (inlined by) tlsf_malloc at /home/moritz/esp/esp-idf/components/heap/tlsf/tlsf.c:1005
+[0m
+[0;33m0x4000c46c: memset in ROM
+0x4000c477: memset in ROM
+[0m
+[0;33m0x400967bd: remove_free_block at /home/moritz/esp/esp-idf/components/heap/tlsf/tlsf.c:331 (discriminator 1)
+ (inlined by) block_locate_free at /home/moritz/esp/esp-idf/components/heap/tlsf/tlsf.c:567 (discriminator 1)
+ (inlined by) tlsf_malloc at /home/moritz/esp/esp-idf/components/heap/tlsf/tlsf.c:1005 (discriminator 1)
+0x40096159: multi_heap_malloc_impl at /home/moritz/esp/esp-idf/components/heap/multi_heap.c:210
+0x40081ff9: heap_caps_malloc_base at /home/moritz/esp/esp-idf/components/heap/heap_caps.c:179
+0x40082054: heap_caps_malloc at /home/moritz/esp/esp-idf/components/heap/heap_caps.c:202
+0x400926f9: pvPortMalloc at /home/moritz/esp/esp-idf/components/freertos/heap_idf.c:55
+0x400918c2: xQueueGenericCreate at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:545
+0x40091949: xQueueCreateCountingSemaphore at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:902
+0x4010a635: osi_sem_new at /home/moritz/esp/esp-idf/components/bt/common/osi/semaphore.c:31
+0x4010938e: fixed_queue_new at /home/moritz/esp/esp-idf/components/bt/common/osi/fixed_queue.c:54
+0x400f3f71: gatt_allocate_tcb_by_bdaddr at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_utils.c:1087
+0x400f176e: gatt_le_connect_cback at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_main.c:491
+0x401006f6: l2cu_process_fixed_chnl_resp at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_utils.c:2860
+0x400f8add: l2cble_notify_le_connection at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_ble.c:314
+0x400e2f46: btm_ble_read_remote_features_complete at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_gap.c:4346
+0x400eccb1: btu_ble_read_remote_feat_evt at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/btu/btu_hcif.c:2065
+0x400ed792: btu_hcif_process_event at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/btu/btu_hcif.c:367
+0x400edbcf: btu_hci_msg_process at /home/moritz/esp/esp-idf/components/bt/host/bluedroid/stack/btu/btu_task.c:159
+0x4010a1a7: osi_thread_run at /home/moritz/esp/esp-idf/components/bt/common/osi/thread.c:165
+0x40092071: vPortTaskWrapper at /home/moritz/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0m
