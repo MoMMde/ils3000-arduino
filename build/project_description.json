@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "ils3000-arduino",
-    "project_version":    "87e8df7-dirty",
+    "project_version":    "27e2798-dirty",
     "project_path":       "/home/moritz/coding/ils3000-arduino",
     "idf_path":           "/home/moritz/esp/esp-idf",
     "build_dir":          "/home/moritz/coding/ils3000-arduino/build",
