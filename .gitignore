@@ -2,3 +2,6 @@
 export.sh
 # also pernal stuff
 buildflashmonitor.sh
+
+cmake-build-debug
+build/log
