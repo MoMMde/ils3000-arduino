@@ -148,7 +148,7 @@ static esp_ble_adv_params_t adv_params = {
 #define PROFILE_B_APP_ID 1
 
 #define TEMP_SENSOR_PORT 0
-#define CHARGING_PORT 32
+#define CHARGING_PORT 23
 #define FAN_PORT 22
 
 struct gatts_profile_inst {
