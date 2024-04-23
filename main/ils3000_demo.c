@@ -1,19 +1,3 @@
-/*
- * SPDX-FileCopyrightText: 2021-2023 Espressif Systems (Shanghai) CO LTD
- *
- * SPDX-License-Identifier: Unlicense OR CC0-1.0
- */
-
-/****************************************************************************
-*
-* This demo showcases BLE GATT server. It can send adv data, be connected by client.
-* Run the gatt_client demo, the client demo will automatically connect to the gatt_server demo.
-* Client demo will enable gatt_server's notify after connection. The two devices will then exchange
-* data.
-*
-****************************************************************************/
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -35,9 +19,12 @@
 #include "esp_bt_device.h"
 #include "esp_gatt_common_api.h"
 
+#include "driver/adc.h"
+#include "esp_adc_cal.h"
+
 #include "sdkconfig.h"
 
-#define GATTS_TAG "GATTS_DEMO"
+#define GATTS_TAG "ILS3000"
 
 ///Declare the static function
 static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
@@ -147,9 +134,9 @@ static esp_ble_adv_params_t adv_params = {
 #define PROFILE_A_APP_ID 0
 #define PROFILE_B_APP_ID 1
 
-#define TEMP_SENSOR_PORT 0
-#define CHARGING_PORT 23
-#define FAN_PORT 22
+#define TEMP_SENSOR_PORT 36
+#define CHARGING_PORT 18
+#define FAN_PORT 23
 
 struct gatts_profile_inst {
     esp_gatts_cb_t gatts_cb;
@@ -193,25 +180,27 @@ int max_charge = 80;
 int current_charge = 0;
 int current_temp = 0;
 
-static void change_charging_status(bool should_charge) {
-    gpio_set_level(CHARGING_PORT, should_charge);
-    is_charging = should_charge;
-}
-
-static void change_fan_status(bool should_spin) {
-    gpio_set_level(FAN_PORT, should_spin);
-    is_cooling = should_spin;
-}
-
 long map(long x, long in_min, long in_max, long out_min, long out_max) {
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
+float average_temp;
+uint32_t temp;
+uint32_t voltage = 0;
+
+#define ITERATIONS 10
+
 void measure_temperature()
 {
     ESP_LOGI(GATTS_TAG, "measure_temperature()");
-    int temp_sensor_port = gpio_get_level(TEMP_SENSOR_PORT);
-    current_temp = map(temp_sensor_port, 0, 410, -50, 150);
+    average_temp = 0;
+    for (int i = 0; i < ITERATIONS; ++i) {
+        temp = adc1_get_raw(ADC1_CHANNEL_0);
+        // https://www.analog.com/en/products/tmp36.html#:~:text=The%20TMP36%20is%20specified%20from,a%20single%202.7%20V%20supply.
+        average_temp += 90.0-(temp/50.0);
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+    current_temp = average_temp/ITERATIONS;
 }
 
 static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param)
@@ -316,11 +305,13 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
             ESP_LOGI(GATTS_TAG, "GATT_READ_EVT, conn_id %d, trans_id %" PRIu32 ", handle %d", param->read.conn_id, param->read.trans_id, param->read.handle);
 
             measure_temperature();
-            ESP_LOGI(GATTS_TAG, "is_cooling=%b", is_cooling);
-            if (current_temp > 25 && is_cooling == false) {
-                change_fan_status(true);
+
+            if (current_temp > 30) {
+                gpio_set_level(FAN_PORT, 0);
+                is_cooling = true;
             } else {
-                change_fan_status(false);
+                gpio_set_level(FAN_PORT, 1);
+                is_cooling = false;
             }
 
             esp_gatt_rsp_t rsp;
@@ -333,6 +324,19 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
             rsp.attr_value.value[3] = is_charging;
             rsp.attr_value.value[4] = is_cooling;
             rsp.attr_value.value[5] = current_temp;
+
+            if (is_charging) {
+                ESP_LOGI(GATTS_TAG, "is_charging=true");
+            } else {
+                ESP_LOGI(GATTS_TAG, "is_charging=false");
+            }
+
+            if (is_cooling) {
+                ESP_LOGI(GATTS_TAG, "is_cooling=true");
+            } else {
+                ESP_LOGI(GATTS_TAG, "is_cooling=false");
+            }
+
             esp_ble_gatts_send_response(gatts_if, param->read.conn_id, param->read.trans_id,
                                         ESP_GATT_OK, &rsp);
             break;
@@ -345,13 +349,15 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
                 max_charge = param->write.value[1];
                 min_charge = param->write.value[2];
 
-                if (current_charge >= max_charge) {
-                    change_charging_status(false);
-                };
-
-                if (current_charge <= min_charge) {
-                    change_charging_status(true);
-                };
+                if (current_charge >= max_charge && is_charging == true) {
+                    ESP_LOGI(GATTS_TAG, "Flipping Charge Relay to Off");
+                    gpio_set_level(CHARGING_PORT, 0);
+                    is_charging = false;
+                } else if (current_charge < min_charge && is_charging == false) {
+                    ESP_LOGI(GATTS_TAG, "Flipping Charge Relay to On");
+                    gpio_set_level(CHARGING_PORT, 1);
+                    is_charging = true;
+                }
 
                 ESP_LOGI(GATTS_TAG, "current_carge=%d; max_charge=%d; min_charge=%d", current_charge, max_charge, min_charge);
 
@@ -458,10 +464,12 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
             gl_profile_tab[PROFILE_A_APP_ID].conn_id = param->connect.conn_id;
             //start sent the update connection parameters to the peer device.
             esp_ble_gap_update_conn_params(&conn_params);
+            gpio_set_level(CHARGING_PORT, 0);
             break;
         }
         case ESP_GATTS_DISCONNECT_EVT:
             ESP_LOGI(GATTS_TAG, "ESP_GATTS_DISCONNECT_EVT, disconnect reason 0x%x", param->disconnect.reason);
+            gpio_set_level(CHARGING_PORT, 1);
             esp_ble_gap_start_advertising(&adv_params);
             break;
         case ESP_GATTS_CONF_EVT:
@@ -515,6 +523,13 @@ static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_
 
 void app_main(void)
 {
+
+    gpio_set_direction(FAN_PORT, GPIO_MODE_OUTPUT);
+    gpio_set_direction(CHARGING_PORT, GPIO_MODE_OUTPUT);
+
+    gpio_set_pull_mode(FAN_PORT, GPIO_PULLDOWN_ONLY);
+    gpio_set_pull_mode(CHARGING_PORT, GPIO_PULLDOWN_ONLY);
+
     esp_err_t ret;
 
     // Initialize NVS.
@@ -575,4 +590,6 @@ void app_main(void)
     if (local_mtu_ret){
         ESP_LOGE(GATTS_TAG, "set local  MTU failed, error code = %x", local_mtu_ret);
     }
+
+    adc1_config_width(ADC_WIDTH_BIT_12);
 }
