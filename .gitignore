@@ -5,3 +5,4 @@ buildflashmonitor.sh
 
 cmake-build-debug
 build/log
+.idea
