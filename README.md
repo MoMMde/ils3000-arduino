@@ -1,4 +1,6 @@
-ILS3000 
+# ILS3000 
+
+![ILS3000](PXL_20240424_061355041.jpg)
 
 Das Intelligente Lade-System (3000) überwacht ihr Mobiltelefon beim Ladevorgang. Das Problem besteht darin, dass ^, vor allem Lithium-Ionen Varianten, nie voll geladen werden sollten. Eine hohe Ladung kann der Batterie schaden. Dadurch leidet die Kapazität, kann allerdings auch z. B. einen Akku Brand verursachen, welcher sehr schwer zu löschen ist.
 
